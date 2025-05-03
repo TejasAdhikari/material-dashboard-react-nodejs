@@ -12,7 +12,7 @@ import * as fs from "fs";
 import cron from "node-cron";
 import ReseedAction from "./mongo/ReseedAction.js";
 import mongoose from "mongoose";
-
+import courseRoutes from "./routes/courseRoutes.js";
 
 dotenv.config();
 
@@ -43,6 +43,7 @@ app.get("/", function (req, res) {
 
 app.use("/", authRoutes);
 app.use("/me", meRoutes);
+app.use("/", courseRoutes);
 
 if (process.env.SCHEDULE_HOUR) {
   cron.schedule(`0 */${process.env.SCHEDULE_HOUR} * * *'`, () => {

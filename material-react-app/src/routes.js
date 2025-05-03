@@ -53,6 +53,9 @@ import Register from "auth/register";
 import ForgotPassword from "auth/forgot-password";
 import ResetPassword from "auth/reset-password";
 
+import Course from "layouts/course";
+import SchoolIcon from "@mui/icons-material/School";
+
 // @mui icons
 import Icon from "@mui/material/Icon";
 
@@ -176,6 +179,14 @@ const routes = [
     icon: <Icon fontSize="small">assignment</Icon>,
     route: "/auth/reset-password",
     component: <ResetPassword />,
+  },
+  {
+    type: "collapse",
+    name: "Course",
+    key: "course",
+    icon: <SchoolIcon fontSize="small" />,
+    route: "/course",
+    component: <Course />,
   },
 ];
 
